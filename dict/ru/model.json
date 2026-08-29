@@ -1,0 +1,20 @@
+{
+  "action.reload": "Обновить",
+  "blocked.composer": "Эта модель недоступна — выберите модель, чтобы продолжить",
+  "command.description": "Выбрать модель для этого диалога",
+  "effort.providerDefault": "По умолчанию",
+  "empty.efforts": "У этой модели нет уровней рассуждений.",
+  "empty.models": "Нет доступных моделей.",
+  "error.action": "Не удалось выполнить операцию с моделью: {message}",
+  "menu.aria": "Модель и уровень рассуждений",
+  "menu.effort": "Уровень рассуждений",
+  "menu.model": "Модель",
+  "option.loadError": "Не удалось загрузить каталог: {message}",
+  "status.loading": "Обновление списка моделей…",
+  "trigger.aria": "Выбор модели, текущая {model}",
+  "trigger.ariaEffort": "Выбор модели, текущая {model}, уровень рассуждений {effort}",
+  "trigger.fallback": "Выбрать модель",
+  "trigger.loading": "Загрузка моделей…",
+  "trigger.selectAria": "Выбрать модель",
+  "warning.groupLoad": "Не удалось загрузить «{name}»: {message}"
+}

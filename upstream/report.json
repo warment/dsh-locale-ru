@@ -1,0 +1,245 @@
+{
+  "totals": {
+    "namespaces": 33,
+    "keys": 1061,
+    "warnings": 0,
+    "notes": 1
+  },
+  "namespaces": {
+    "agent-team": {
+      "keys": 35,
+      "files": [
+        "packages/experimental/client-ui-agent-team/src/client/locales.ts",
+        "packages/experimental/client-ui-agent-team/src/client/mount.ts"
+      ]
+    },
+    "approval": {
+      "keys": 5,
+      "files": [
+        "packages/client/ui-approval/src/client/index.ts",
+        "packages/client/ui-approval/src/client/locales.ts"
+      ]
+    },
+    "chat": {
+      "keys": 106,
+      "files": [
+        "packages/client/ui-chat/src/client/apply.ts",
+        "packages/client/ui-chat/src/client/locale.ts"
+      ]
+    },
+    "command": {
+      "keys": 8,
+      "files": [
+        "packages/client/ui-commands/src/client/index.ts",
+        "packages/client/ui-commands/src/client/locales.ts"
+      ]
+    },
+    "common": {
+      "keys": 40,
+      "files": [
+        "packages/client/locale/src/client/index.ts",
+        "packages/client/locale/src/locales/en.ts",
+        "packages/client/locale/src/locales/index.ts",
+        "packages/client/locale/src/locales/zh.ts"
+      ]
+    },
+    "conversation": {
+      "keys": 141,
+      "files": [
+        "packages/client/ui-conversation/src/client/apply.ts",
+        "packages/client/ui-conversation/src/client/locales.ts"
+      ]
+    },
+    "cordis": {
+      "keys": 50,
+      "files": [
+        "packages/extensions/ui-cordis/src/client/index.ts",
+        "packages/extensions/ui-cordis/src/client/locales.ts"
+      ]
+    },
+    "deliverables": {
+      "keys": 5,
+      "files": [
+        "packages/client/ui-deliverables/src/client/index.ts",
+        "packages/client/ui-deliverables/src/client/locales.ts"
+      ]
+    },
+    "directory-browser": {
+      "keys": 13,
+      "files": [
+        "packages/client/ui-directory-picker-browse/src/client/index.ts"
+      ]
+    },
+    "feedback": {
+      "keys": 13,
+      "files": [
+        "packages/client/ui-message-feedback/src/client/index.ts",
+        "packages/client/ui-message-feedback/src/client/locales.ts"
+      ]
+    },
+    "goal": {
+      "keys": 11,
+      "files": [
+        "packages/client/ui-goal/src/client/index.ts",
+        "packages/client/ui-goal/src/client/locales.ts"
+      ]
+    },
+    "job": {
+      "keys": 15,
+      "files": [
+        "packages/client/ui-jobs/src/client/index.ts",
+        "packages/client/ui-jobs/src/client/locales.ts"
+      ]
+    },
+    "model": {
+      "keys": 18,
+      "files": [
+        "packages/client/ui-model-selection/src/client/index.ts",
+        "packages/client/ui-model-selection/src/client/locales.ts"
+      ]
+    },
+    "permission.access": {
+      "keys": 5,
+      "files": [
+        "packages/client/ui-permission-presets/src/client/index.ts",
+        "packages/client/ui-permission-presets/src/client/locales.ts"
+      ]
+    },
+    "plan": {
+      "keys": 6,
+      "files": [
+        "packages/client/ui-plan/src/client/index.ts",
+        "packages/client/ui-plan/src/client/locales.ts"
+      ]
+    },
+    "question": {
+      "keys": 15,
+      "files": [
+        "packages/client/ui-user-questions/src/client/index.ts",
+        "packages/client/ui-user-questions/src/client/locales.ts"
+      ]
+    },
+    "reference": {
+      "keys": 10,
+      "files": [
+        "packages/client/ui-reference/src/client/index.ts",
+        "packages/client/ui-reference/src/client/locales.ts"
+      ]
+    },
+    "session-log-download": {
+      "keys": 8,
+      "files": [
+        "packages/session-query/session-log-export/src/client/index.ts",
+        "packages/session-query/session-log-export/src/client/locales.ts"
+      ]
+    },
+    "settings": {
+      "keys": 6,
+      "files": [
+        "packages/client/ui-settings-general/src/client/index.ts",
+        "packages/client/ui-settings-general/src/client/locales.ts"
+      ]
+    },
+    "settings.agentPreset": {
+      "keys": 54,
+      "files": [
+        "packages/client/ui-agent-preset/src/client/index.ts",
+        "packages/client/ui-agent-preset/src/client/locales.ts"
+      ]
+    },
+    "settings.locale": {
+      "keys": 1,
+      "files": [
+        "packages/client/locale/src/client/index.ts",
+        "packages/client/locale/src/locales/settings.ts"
+      ]
+    },
+    "settings.models": {
+      "keys": 97,
+      "files": [
+        "packages/client/ui-settings-models/src/client/index.ts",
+        "packages/client/ui-settings-models/src/client/locales.ts"
+      ]
+    },
+    "settings.permission": {
+      "keys": 9,
+      "files": [
+        "packages/client/ui-permission-presets/src/client/index.ts"
+      ]
+    },
+    "settings.pluginInventory": {
+      "keys": 18,
+      "files": [
+        "packages/client/ui-settings-plugin-inventory/src/client/index.ts",
+        "packages/client/ui-settings-plugin-inventory/src/client/locales.ts"
+      ]
+    },
+    "settings.plugins": {
+      "keys": 52,
+      "files": [
+        "packages/client/ui-settings-plugins/src/client/index.ts",
+        "packages/client/ui-settings-plugins/src/client/locales.ts"
+      ]
+    },
+    "settings.theme": {
+      "keys": 9,
+      "files": [
+        "packages/client/ui-theme/src/client/index.ts",
+        "packages/client/ui-theme/src/client/locales.ts"
+      ]
+    },
+    "sidebar": {
+      "keys": 4,
+      "files": [
+        "packages/client/ui-sidebar/src/client/index.ts",
+        "packages/client/ui-sidebar/src/client/locales.ts"
+      ]
+    },
+    "skill": {
+      "keys": 7,
+      "files": [
+        "packages/client/ui-skill/src/client/index.ts",
+        "packages/client/ui-skill/src/client/locales.ts"
+      ]
+    },
+    "slash.menu": {
+      "keys": 9,
+      "files": [
+        "packages/client/ui-input-trigger/src/client/index.ts",
+        "packages/client/ui-input-trigger/src/client/locales.ts"
+      ]
+    },
+    "subagent": {
+      "keys": 37,
+      "files": [
+        "packages/client/ui-subagent/src/client/index.ts",
+        "packages/client/ui-subagent/src/client/locales.ts"
+      ]
+    },
+    "trajectory": {
+      "keys": 174,
+      "files": [
+        "packages/client/ui-trajectory/src/client/index.ts",
+        "packages/client/ui-trajectory/src/client/locales.ts"
+      ]
+    },
+    "workflowRun": {
+      "keys": 18,
+      "files": [
+        "packages/client/ui-workflow-run/src/client/index.ts",
+        "packages/client/ui-workflow-run/src/client/locales.ts"
+      ]
+    },
+    "workspace": {
+      "keys": 62,
+      "files": [
+        "packages/client/ui-workspace/src/client/index.ts",
+        "packages/client/ui-workspace/src/client/locales.ts"
+      ]
+    }
+  },
+  "warnings": [],
+  "notes": [
+    "[packages/client/ui-directory-picker-browse/src/client/index.ts:70] ns 'directory-browser': dictionaries resolved from an inline [locale, dict][] array (loop-form register call)"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "action.next": "Далее",
+  "action.skip": "Пропустить этот вопрос",
+  "custom.placeholder": "Введите ответ",
+  "error.incomplete": "Сначала ответьте на этот вопрос.",
+  "error.unanswered": "Выберите вариант или введите свой ответ.",
+  "nav.cancel": "Отклонить все вопросы",
+  "nav.maximize": "Развернуть карточку вопроса",
+  "nav.minimize": "Свернуть карточку вопроса",
+  "nav.next": "Следующий вопрос",
+  "nav.prev": "Предыдущий вопрос",
+  "option.recommended": "Рекомендуется",
+  "plan.approve": "Одобрить",
+  "plan.decline": "Отклонить",
+  "plan.discuss": "Обсудить в диалоге",
+  "plan.header": "Проверка плана"
+}

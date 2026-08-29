@@ -1,0 +1,13 @@
+{
+  "action.cancel": "Отменить изменения",
+  "action.clear": "Очистить цель",
+  "action.edit": "Изменить цель",
+  "action.pause": "Приостановить цель",
+  "action.resume": "Возобновить цель",
+  "action.save": "Сохранить цель",
+  "commandInput.aria": "Поле ввода команды",
+  "objective.aria": "Текст цели",
+  "phase.active": "Активная цель",
+  "phase.blocked": "Заблокированная цель",
+  "phase.paused": "Приостановленная цель"
+}

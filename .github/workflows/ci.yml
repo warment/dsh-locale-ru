@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Structural validation of dict/ru/*.json against upstream/corpus.json:
+      # prints a per-namespace coverage table and fails on unknown
+      # namespace/key, placeholder mismatch, or invalid values.
+      - name: Validate dictionaries
+        run: node scripts/check.mjs
+
+      # Strict mode additionally fails when any upstream key is missing from
+      # dict/ru. Enable once coverage reaches 100%:
+      # - run: node scripts/check.mjs --strict
+
+      # NOTE: refreshing upstream/corpus.json is intentionally NOT part of CI.
+      # `node scripts/extract.mjs` requires a local clone of
+      # deepseek-ai/deepseek-harness and is run manually by maintainers —
+      # see docs/upstream-sync.md.

@@ -1,0 +1,10 @@
+{
+  "listbox.aria": "Совпадения для /{command}",
+  "notice.imagesUnsupported": "/{command} не принимает изображения во вложениях; сначала удалите их",
+  "overlay.aria": "Варианты /{command}",
+  "search.aria": "Фильтрация вариантов",
+  "search.placeholder": "Поиск…",
+  "status.applying": "Применение…",
+  "status.empty": "Нет вариантов",
+  "status.loading": "Загрузка вариантов…"
+}

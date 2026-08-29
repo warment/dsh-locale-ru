@@ -1,0 +1,5 @@
+# dsh-locale-ru bundle patch: mounts the pack so the client-modules scanner
+# picks up its dsh.client declaration and serves the browser half.
+- insert:
+    - id: locale-ru
+      name: dsh-locale-ru

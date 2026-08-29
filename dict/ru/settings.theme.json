@@ -1,0 +1,11 @@
+{
+  "appearance.dark": "Тёмная",
+  "appearance.light": "Светлая",
+  "appearance.system": "Системная",
+  "appearance.title": "Оформление",
+  "fontSize.decrease": "Уменьшить размер шрифта",
+  "fontSize.description": "Влияет только на содержимое диалога",
+  "fontSize.increase": "Увеличить размер шрифта",
+  "fontSize.title": "Размер шрифта",
+  "fontSize.unit": "px"
+}
