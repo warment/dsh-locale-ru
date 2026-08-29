@@ -40,6 +40,15 @@ for (const url of urls) {
     console.log('contains "Русский" label:', body.includes('Русский'))
     console.log('contains addLanguage call:', body.includes('addLanguage'))
     console.log('registers ru common keys:', body.includes("'Отмена'") || body.includes('"Отмена"'))
+    // The browser loads the combo as a classic script; a parse failure kills
+    // the whole boot, so check the bundle actually parses.
+    try {
+      new Function(body)
+      console.log('combo parses as classic script: true')
+    } catch (error) {
+      served = false
+      console.log('combo parses as classic script: FALSE —', error.message)
+    }
     break
   }
 }
