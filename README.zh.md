@@ -1,8 +1,8 @@
-# dsh-locale-ru
+# deepseek-harness-locale-ru
 
 中文 | [Русский](README.md) | [English](README.en.md)
 
-`dsh-locale-ru` 是 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) Web UI 的俄语本地化语言包：插件将「Русский」（俄语）加入**官方本地化系统**，即界面设置中内置的语言切换器。
+`deepseek-harness-locale-ru` 是 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) Web UI 的俄语本地化语言包：插件将「Русский」（俄语）加入**官方本地化系统**，即界面设置中内置的语言切换器。
 
 插件通过文档化的客户端本地化 API（`@deepseek-ai/dsh-client-locale`）注册语言与词典，并通过配置层为权限预设提供俄语显示名称。不修改 Harness 的任何文件——无需分叉，也无需重新构建。
 
@@ -16,7 +16,7 @@ DeepSeek Harness 处于 _开发者预览_ 阶段，正在快速迭代。**未来
 
 - 本包是**外部 locale 插件**，而非内核内置语言：它通过公开 API 注册语言与词典，不需要修改 upstream。两条路径的保证不同——内置语言经过完整的内核发布周期，外部插件则针对特定 upstream 修订版本验证。
 - 已针对 upstream 修订版本 `cd5ef81`（v0.1.2-alpha.1）测试。升级 dsh 后，请重新运行 `node scripts/check.mjs --strict`（需 Harness 克隆）——参见 [docs/upstream-sync.md](docs/upstream-sync.md)。
-- 回滚只需一条命令：`dsh plugin --profile web remove dsh-locale-ru` 并重启 `dsh web`。
+- 回滚只需一条命令：`dsh plugin --profile web remove deepseek-harness-locale-ru` 并重启 `dsh web`。
 
 ## 安装
 
@@ -25,7 +25,7 @@ DeepSeek Harness 处于 _开发者预览_ 阶段，正在快速迭代。**未来
 复制、粘贴、重启：
 
 ```sh
-dsh plugin --profile web add github:warment/dsh-locale-ru
+dsh plugin --profile web add github:warment/deepseek-harness-locale-ru
 ```
 
 该命令适用于任何 dsh 安装方式——npm（`npx @deepseek-ai/dsh web`）或源码检出（`pnpm dsh web`）——并支持 macOS、Windows 和 Linux。`web` 配置档及其目录结构会自动创建，无需手动配置。
@@ -43,7 +43,7 @@ dsh plugin --profile web add github:warment/dsh-locale-ru
 不经过 GitHub 进行测试（例如发布前验证或使用自己的修改）：
 
 ```sh
-dsh plugin --profile web add /path/to/dsh-locale-ru
+dsh plugin --profile web add /path/to/deepseek-harness-locale-ru
 ```
 
 ### 更新与卸载
@@ -51,21 +51,21 @@ dsh plugin --profile web add /path/to/dsh-locale-ru
 更新到新版本时，先移除再用同一条命令安装：
 
 ```sh
-dsh plugin --profile web remove dsh-locale-ru
-dsh plugin --profile web add github:warment/dsh-locale-ru
+dsh plugin --profile web remove deepseek-harness-locale-ru
+dsh plugin --profile web add github:warment/deepseek-harness-locale-ru
 ```
 
 卸载：
 
 ```sh
-dsh plugin --profile web remove dsh-locale-ru
+dsh plugin --profile web remove deepseek-harness-locale-ru
 ```
 
 任何插件变更后，请重启 `dsh web`。
 
 ## 社区与支持
 
-- 翻译错误、未翻译的字符串、改进建议，请提交到本仓库的 [Issues](https://github.com/warment/dsh-locale-ru/issues)。
+- 翻译错误、未翻译的字符串、改进建议，请提交到本仓库的 [Issues](https://github.com/warment/deepseek-harness-locale-ru/issues)。
 - 关于 DeepSeek Harness 本身的问题（安装、模型、会话——翻译除外），请前往官方仓库：[GitHub Discussions](https://github.com/deepseek-ai/deepseek-harness/discussions) 与 [Discord 社区](https://discord.gg/Ycq5dCaS4)。
 
 ## 参与贡献

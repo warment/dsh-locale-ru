@@ -4,7 +4,7 @@
  *
  * Usage (from the clone root, so tsx from the clone's node_modules is active):
  *
- *   cd /path/to/deepseek-harness && node --import tsx/esm /path/to/dsh-locale-ru/scripts/extract.mjs
+ *   cd /path/to/deepseek-harness && node --import tsx/esm /path/to/deepseek-harness-locale-ru/scripts/extract.mjs
  *
  * Strategy:
  *   - Discovery is filesystem-based: walk the clone (source .ts/.tsx only, tests

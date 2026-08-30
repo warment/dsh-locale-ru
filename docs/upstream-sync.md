@@ -14,10 +14,10 @@ cd deepseek-harness && git pull
 
 ```bash
 cd /path/to/deepseek-harness
-node /path/to/dsh-locale-ru/scripts/extract.mjs
+node /path/to/deepseek-harness-locale-ru/scripts/extract.mjs
 ```
 
-The script reads the harness sources in the current working directory and regenerates `upstream/corpus.json` in your dsh-locale-ru checkout. Commit the refreshed corpus, noting which harness revision it was extracted from.
+The script reads the harness sources in the current working directory and regenerates `upstream/corpus.json` in your deepseek-harness-locale-ru checkout. Commit the refreshed corpus, noting which harness revision it was extracted from.
 
 ## 3. See what is missing
 
@@ -44,7 +44,7 @@ Commit everything together: `upstream/corpus.json`, the updated `dict/ru/*.json`
 Install the local checkout as a plugin and restart the web UI:
 
 ```bash
-dsh plugin --profile web add /path/to/dsh-locale-ru
+dsh plugin --profile web add /path/to/deepseek-harness-locale-ru
 dsh web
 ```
 

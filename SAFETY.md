@@ -2,7 +2,7 @@
 
 ## Русский
 
-`dsh-locale-ru` — независимый проект сообщества по локализации веб-интерфейса DeepSeek Harness. Он не является официальным продуктом DeepSeek и никак не связан с компанией DeepSeek.
+`deepseek-harness-locale-ru` — независимый проект сообщества по локализации веб-интерфейса DeepSeek Harness. Он не является официальным продуктом DeepSeek и никак не связан с компанией DeepSeek.
 
 ### Что пакет может менять
 
@@ -19,11 +19,11 @@
 
 Поведение самого Harness (запуск модели, исполнение команд, доступ к файлам) этот пакет не меняет — вопросы безопасности самой платформы описаны в официальном [уведомлении DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness/blob/main/SAFETY.md).
 
-Как и любой плагин, языковой пакет исполняется с правами клиента Harness: перед установкой проверяйте источник (устанавливайте из официального репозитория `warment/dsh-locale-ru`), просматривайте состав поставки и используйте откат (`dsh plugin --profile web remove dsh-locale-ru`) при любых сомнениях.
+Как и любой плагин, языковой пакет исполняется с правами клиента Harness: перед установкой проверяйте источник (устанавливайте из официального репозитория `warment/deepseek-harness-locale-ru`), просматривайте состав поставки и используйте откат (`dsh plugin --profile web remove deepseek-harness-locale-ru`) при любых сомнениях.
 
 ## English
 
-`dsh-locale-ru` is an independent community localization project for the DeepSeek Harness web UI. It is not an official DeepSeek product and is not affiliated with DeepSeek in any way.
+`deepseek-harness-locale-ru` is an independent community localization project for the DeepSeek Harness web UI. It is not an official DeepSeek product and is not affiliated with DeepSeek in any way.
 
 ### What the pack can modify
 
@@ -40,7 +40,7 @@
 
 The pack does not change Harness behavior itself (model execution, command execution, file access). For the platform's own security posture, see the official [DeepSeek Harness safety notice](https://github.com/deepseek-ai/deepseek-harness/blob/main/SAFETY.md).
 
-Like any plugin, a language pack executes with the Harness client's privileges: verify the install source (install from the official repository `warment/dsh-locale-ru`), review the shipped artifacts, and roll back (`dsh plugin --profile web remove dsh-locale-ru`) on any doubt.
+Like any plugin, a language pack executes with the Harness client's privileges: verify the install source (install from the official repository `warment/deepseek-harness-locale-ru`), review the shipped artifacts, and roll back (`dsh plugin --profile web remove deepseek-harness-locale-ru`) on any doubt.
 
 ## No warranty
 

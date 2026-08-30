@@ -1,4 +1,4 @@
-# dsh-locale-ru bundle patch.
+# deepseek-harness-locale-ru bundle patch.
 #
 # 1) Mount the pack so the client-modules scanner picks up its dsh.client
 #    declaration and serves the browser half.
@@ -18,7 +18,7 @@
 
 - insert:
     - id: locale-ru
-      name: dsh-locale-ru
+      name: deepseek-harness-locale-ru
 
 - id: permission
   name: '@deepseek-ai/dsh-permission-presets'

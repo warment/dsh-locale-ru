@@ -1,6 +1,6 @@
 # Third-Party Notices
 
-This package (`dsh-locale-ru`) is an independent community localization of the [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) project ("the upstream project").
+This package (`deepseek-harness-locale-ru`) is an independent community localization of the [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) project ("the upstream project").
 
 ## Upstream project
 
@@ -12,7 +12,7 @@ This pack localizes the upstream web UI through its documented external-plugin l
 
 ## This package's own dependencies
 
-`dsh-locale-ru` ships **no third-party runtime dependencies of its own**:
+`deepseek-harness-locale-ru` ships **no third-party runtime dependencies of its own**:
 
 - Zero npm dependencies in `package.json`.
 - The browser bundle (`lib/client.js`) is generated from this repository's own dictionaries (`dict/ru/*.json`).

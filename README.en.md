@@ -1,8 +1,8 @@
-# dsh-locale-ru
+# deepseek-harness-locale-ru
 
 English | [Русский](README.md) | [中文](README.zh.md)
 
-`dsh-locale-ru` is a Russian localization of the [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) web UI: the plugin adds «Русский» (Russian) to the **official localization system** — the built-in language picker in the UI settings.
+`deepseek-harness-locale-ru` is a Russian localization of the [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) web UI: the plugin adds «Русский» (Russian) to the **official localization system** — the built-in language picker in the UI settings.
 
 The plugin registers the language and dictionaries through the documented client locale API (`@deepseek-ai/dsh-client-locale`) and restates the permission preset display names through a configuration layer. No Harness files are modified — no fork, no rebuild.
 
@@ -16,7 +16,7 @@ Review the [safety notice](SAFETY.md) before installing.
 
 - This pack is an **external locale plugin**, not a core-bundled language: it registers the language and dictionaries through a public API and requires no upstream changes. The two paths carry different guarantees — a bundled locale goes through the full core release cycle, an external plugin is verified against a specific revision.
 - Tested against upstream revision `cd5ef81` (v0.1.2-alpha.1). After upgrading dsh, re-run `node scripts/check.mjs --strict` (with a Harness clone) — see [docs/upstream-sync.md](docs/upstream-sync.md).
-- Rollback is one command: `dsh plugin --profile web remove dsh-locale-ru` and restart `dsh web`.
+- Rollback is one command: `dsh plugin --profile web remove deepseek-harness-locale-ru` and restart `dsh web`.
 
 ## Install
 
@@ -25,7 +25,7 @@ Review the [safety notice](SAFETY.md) before installing.
 Copy, paste, restart:
 
 ```sh
-dsh plugin --profile web add github:warment/dsh-locale-ru
+dsh plugin --profile web add github:warment/deepseek-harness-locale-ru
 ```
 
 The command works with any dsh installation — npm (`npx @deepseek-ai/dsh web`) or a source checkout (`pnpm dsh web`) — on macOS, Windows, and Linux. The `web` profile and its layout are created automatically; nothing to configure by hand.
@@ -43,7 +43,7 @@ If you skip the language pick, the UI stays English — «Русский» remai
 To test without GitHub (e.g. before publishing or with your own edits):
 
 ```sh
-dsh plugin --profile web add /path/to/dsh-locale-ru
+dsh plugin --profile web add /path/to/deepseek-harness-locale-ru
 ```
 
 ### Update and uninstall
@@ -51,21 +51,21 @@ dsh plugin --profile web add /path/to/dsh-locale-ru
 To update to a new version, remove the package and install it again with the same command:
 
 ```sh
-dsh plugin --profile web remove dsh-locale-ru
-dsh plugin --profile web add github:warment/dsh-locale-ru
+dsh plugin --profile web remove deepseek-harness-locale-ru
+dsh plugin --profile web add github:warment/deepseek-harness-locale-ru
 ```
 
 Uninstall:
 
 ```sh
-dsh plugin --profile web remove dsh-locale-ru
+dsh plugin --profile web remove deepseek-harness-locale-ru
 ```
 
 Restart `dsh web` after any plugin change.
 
 ## Community and support
 
-- Translation bugs, missing strings, and ideas go to this repository's [Issues](https://github.com/warment/dsh-locale-ru/issues).
+- Translation bugs, missing strings, and ideas go to this repository's [Issues](https://github.com/warment/deepseek-harness-locale-ru/issues).
 - Questions about DeepSeek Harness itself (installation, models, sessions — everything except the translation) belong in the official repository: [GitHub Discussions](https://github.com/deepseek-ai/deepseek-harness/discussions) and the [Discord community](https://discord.gg/Ycq5dCaS4).
 
 ## Contributing

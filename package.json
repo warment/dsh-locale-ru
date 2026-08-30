@@ -1,18 +1,18 @@
 {
-  "name": "dsh-locale-ru",
+  "name": "deepseek-harness-locale-ru",
   "version": "0.1.1",
   "description": "Russian language pack for the DeepSeek Harness web UI (community)",
   "type": "module",
   "main": "index.js",
-  "author": "dsh-locale-ru contributors",
+  "author": "deepseek-harness-locale-ru contributors",
   "license": "MIT",
-  "homepage": "https://github.com/warment/dsh-locale-ru#readme",
+  "homepage": "https://github.com/warment/deepseek-harness-locale-ru#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/warment/dsh-locale-ru.git"
+    "url": "git+https://github.com/warment/deepseek-harness-locale-ru.git"
   },
   "bugs": {
-    "url": "https://github.com/warment/dsh-locale-ru/issues"
+    "url": "https://github.com/warment/deepseek-harness-locale-ru/issues"
   },
   "files": [
     "index.js",

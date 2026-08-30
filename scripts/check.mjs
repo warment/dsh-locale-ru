@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * check.mjs — dictionary validator for the dsh-locale-ru project (CI contract).
+ * check.mjs — dictionary validator for the deepseek-harness-locale-ru project (CI contract).
  *
  * Reads:
  *   upstream/corpus.json          { "<ns>": { "<key>": { "en": "...", "zh": "..." } } }

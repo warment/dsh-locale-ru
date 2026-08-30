@@ -1,5 +1,5 @@
 /**
- * Spike verification: confirm the dsh-locale-ru browser half made it into the
+ * Spike verification: confirm the deepseek-harness-locale-ru browser half made it into the
  * web boot graph and is served to the browser.
  *
  * Usage: node scripts/verify-boot.mjs <token> [port]
@@ -22,7 +22,7 @@ const authHeaders = cookie ? { cookie } : {}
 // Step 2: fetch the index with the cookie.
 const html = await fetch(`${base}/`, { headers: authHeaders }).then((r) => r.text())
 console.log('index length:', html.length)
-console.log('boot graph mentions dsh-locale-ru:', html.includes('dsh-locale-ru'))
+console.log('boot graph mentions deepseek-harness-locale-ru:', html.includes('deepseek-harness-locale-ru'))
 
 // Step 3: collect plugin script URLs (href/src attributes), unescape HTML entities.
 const urls = [...html.matchAll(/(?:href|src)="(\/plugins\/[^"]+)"/g)].map((m) => m[1].replaceAll('&amp;', '&'))
@@ -34,7 +34,7 @@ for (const url of urls) {
   const response = await fetch(`${base}${url}`, { headers: authHeaders })
   if (!response.ok) continue
   const body = await response.text()
-  if (body.includes('dsh-locale-ru')) {
+  if (body.includes('deepseek-harness-locale-ru')) {
     served = true
     console.log('combo OK:', url.slice(0, 100), `(${body.length} bytes)`)
     console.log('contains "Русский" label:', body.includes('Русский'))
@@ -54,7 +54,7 @@ for (const url of urls) {
 }
 console.log('served to browser:', served)
 
-if (html.includes('dsh-locale-ru') && served) {
+if (html.includes('deepseek-harness-locale-ru') && served) {
   console.log('SPIKE OK: locale pack reaches the browser boot graph')
 } else {
   console.log('SPIKE INCOMPLETE: see flags above')
