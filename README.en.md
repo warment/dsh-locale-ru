@@ -12,6 +12,12 @@ DeepSeek Harness is in _developer preview_ and iterating rapidly. **THERE WILL B
 
 Review the [safety notice](SAFETY.md) before installing.
 
+## Compatibility
+
+- This pack is an **external locale plugin**, not a core-bundled language: it registers the language and dictionaries through a public API and requires no upstream changes. The two paths carry different guarantees — a bundled locale goes through the full core release cycle, an external plugin is verified against a specific revision.
+- Tested against upstream revision `cd5ef81` (v0.1.2-alpha.1). After upgrading dsh, re-run `node scripts/check.mjs --strict` (with a Harness clone) — see [docs/upstream-sync.md](docs/upstream-sync.md).
+- Rollback is one command: `dsh plugin --profile web remove dsh-locale-ru` and restart `dsh web`.
+
 ## Install
 
 ### One command

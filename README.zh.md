@@ -12,6 +12,12 @@ DeepSeek Harness 处于 _开发者预览_ 阶段，正在快速迭代。**未来
 
 安装前请阅读[安全说明](SAFETY.md)。
 
+## 兼容性
+
+- 本包是**外部 locale 插件**，而非内核内置语言：它通过公开 API 注册语言与词典，不需要修改 upstream。两条路径的保证不同——内置语言经过完整的内核发布周期，外部插件则针对特定 upstream 修订版本验证。
+- 已针对 upstream 修订版本 `cd5ef81`（v0.1.2-alpha.1）测试。升级 dsh 后，请重新运行 `node scripts/check.mjs --strict`（需 Harness 克隆）——参见 [docs/upstream-sync.md](docs/upstream-sync.md)。
+- 回滚只需一条命令：`dsh plugin --profile web remove dsh-locale-ru` 并重启 `dsh web`。
+
 ## 安装
 
 ### 一条命令
