@@ -5,7 +5,7 @@
   "phase.unassigned": "Без этапа",
   "run.empty": "Ни один участник не запущен",
   "run.members.one": "{count} участник",
-  "run.members.other": "{count} участников",
+  "run.members.other": "Участников: {count}",
   "run.title": "{name}",
   "status.cancelled": "Отменено",
   "status.completed": "Завершено",

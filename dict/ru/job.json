@@ -1,8 +1,8 @@
 {
   "count.idle.one": "{count} фоновое задание",
-  "count.idle.other": "{count} фоновых заданий",
+  "count.idle.other": "Фоновых заданий: {count}",
   "count.live.one": "{count} фоновое задание выполняется",
-  "count.live.other": "{count} фоновых заданий выполняется",
+  "count.live.other": "Выполняется фоновых заданий: {count}",
   "duration.hours": "{hours} ч {minutes} мин",
   "duration.minutes": "{minutes} мин {seconds} с",
   "duration.seconds": "{seconds} с",

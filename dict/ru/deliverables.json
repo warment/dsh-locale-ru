@@ -1,6 +1,6 @@
 {
   "produced.label": "Результаты",
-  "produced.more": "+ ещё {count} файлов",
+  "produced.more": "Ещё файлов: {count}",
   "produced.moreOne": "+ ещё 1 файл",
   "produced.open": "Открыть {name}",
   "produced.showInFolder": "Показать в папке"
