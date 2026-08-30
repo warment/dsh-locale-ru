@@ -1,0 +1,70 @@
+# Weekly upstream drift check: re-extract the corpus from deepseek-ai/deepseek-harness
+# HEAD and diff against the committed one. On drift, opens/updates a tracking issue.
+name: upstream-drift
+
+on:
+  schedule:
+    - cron: "23 5 * * 1" # Mondays
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Checkout upstream harness
+        uses: actions/checkout@v4
+        with:
+          repository: deepseek-ai/deepseek-harness
+          path: harness
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install tsx (extractor imports upstream TS dictionaries)
+        run: cd harness && npm install --no-save tsx@4
+
+      - name: Re-extract corpus from upstream HEAD
+        run: cd harness && node --import tsx/esm "$GITHUB_WORKSPACE/scripts/extract.mjs"
+
+      - name: Record upstream revision
+        id: rev
+        run: echo "sha=$(git -C harness rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Validate against fresh corpus
+        run: node scripts/check.mjs --strict || true
+
+      - name: Detect corpus diff
+        id: drift
+        run: |
+          if git diff --quiet -- upstream/corpus.json; then
+            echo "drift=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "drift=true" >> "$GITHUB_OUTPUT"
+            git diff --stat -- upstream/corpus.json | tail -1 >> "$GITHUB_OUTPUT" || true
+          fi
+
+      - name: Open or update drift issue
+        if: steps.drift.outputs.drift == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ steps.rev.outputs.sha }}
+        run: |
+          BODY="Upstream [\`$SHA\`](https://github.com/deepseek-ai/deepseek-harness/commit/$SHA) changed UI strings. Run:
+          \`\`\`sh
+          git -C ../deepseek-harness pull && node scripts/extract.mjs && node scripts/check.mjs --strict
+          \`\`\`
+          translate the missing keys, rebuild (\`node scripts/build.mjs\`) and release."
+
+          existing=$(gh issue list --search "Upstream UI strings drifted in:title" --state open --json number --jq '.[0].number' 2>/dev/null || true)
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "$BODY"
+          else
+            gh issue create --title "Upstream UI strings drifted" --body "$BODY" --label "upstream-sync"
+          fi

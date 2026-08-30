@@ -15,8 +15,11 @@
 - Не добавляет инструменты, команды, агентов, пресеты агентов или провайдеров моделей.
 - Не обращается к сети, файлам, процессам и учётным данным; не читает и не хранит содержимое сессий.
 - Не модифицирует файлы самого DeepSeek Harness: подключается только через документированный API внешних плагинов.
+- **Не имеет runtime-зависимостей**: `package.json` не содержит ни одного dependencies-пакета — устанавливаемый код ограничен тремя собственными файлами (`index.js`, `lib/client.js`, `cordis.patch.yml`), которые можно прочитать целиком за несколько минут перед установкой.
 
 Поведение самого Harness (запуск модели, исполнение команд, доступ к файлам) этот пакет не меняет — вопросы безопасности самой платформы описаны в официальном [уведомлении DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness/blob/main/SAFETY.md).
+
+Как и любой плагин, языковой пакет исполняется с правами клиента Harness: перед установкой проверяйте источник (устанавливайте из официального репозитория `warment/dsh-locale-ru`), просматривайте состав поставки и используйте откат (`dsh plugin --profile web remove dsh-locale-ru`) при любых сомнениях.
 
 ## English
 
@@ -33,8 +36,11 @@
 - It adds no tools, commands, agents, agent presets, or model providers.
 - It never touches the network, files, processes, or credentials; it does not read or store session content.
 - It does not modify Harness files: it hooks in exclusively through the documented external-plugin API.
+- **Zero runtime dependencies**: `package.json` declares no dependency packages — the installable code is limited to three first-party files (`index.js`, `lib/client.js`, `cordis.patch.yml`), each readable in full within minutes before installing.
 
 The pack does not change Harness behavior itself (model execution, command execution, file access). For the platform's own security posture, see the official [DeepSeek Harness safety notice](https://github.com/deepseek-ai/deepseek-harness/blob/main/SAFETY.md).
+
+Like any plugin, a language pack executes with the Harness client's privileges: verify the install source (install from the official repository `warment/dsh-locale-ru`), review the shipped artifacts, and roll back (`dsh plugin --profile web remove dsh-locale-ru`) on any doubt.
 
 ## No warranty
 

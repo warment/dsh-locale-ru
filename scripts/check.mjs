@@ -146,6 +146,33 @@ const untranslated = Object.keys(corpus)
   .filter(ns => !ruDicts.has(ns))
   .sort()
 
+/* --------------------------------------------- plural & count-shape lint -- */
+
+// The client resolves .one/.other with a binary `count === 1` ternary, so an
+// `.other` value that starts with the counter ("{count} шагов") reads
+// ungrammatical for 2–4. The pack convention is the agreement-free colon form
+// («Шагов: {count}»); this lint keeps that convention mechanical.
+const PLURAL_SUFFIX_RE = /\.(one|other|zero|two|few|many)$/
+const COUNTER_FIRST_RE = /^\{(?:count|n)\}\s?/
+
+for (const [ns, dict] of ruDicts) {
+  const upstream = corpus[ns]
+  if (upstream === undefined || typeof upstream !== 'object') continue
+  for (const [key, value] of Object.entries(dict)) {
+    const suffix = PLURAL_SUFFIX_RE.exec(key)
+    if (suffix === null) continue
+    const base = key.slice(0, -suffix[0].length)
+    const siblings = Object.keys(upstream).filter(k => k.startsWith(`${base}.`) && PLURAL_SUFFIX_RE.test(k))
+    const missingSiblings = siblings.filter(s => dict[s] === undefined)
+    if (missingSiblings.length > 0) {
+      warnings.push(`[${ns}] '${key}': en plural pair has sibling key(s) missing in ru: ${missingSiblings.join(', ')}`)
+    }
+    if (suffix[1] === 'other' && typeof value === 'string' && COUNTER_FIRST_RE.test(value)) {
+      warnings.push(`[${ns}] '${key}': ru .other starts with the counter ("${value}") — the client fires .other for every count except 1, so 2–4 will read ungrammatical; prefer the colon form («Шагов: {count}»)`)
+    }
+  }
+}
+
 /* ---------------------------------------------------------------- table -- */
 
 const pad = (s, n) => String(s).padEnd(n)
