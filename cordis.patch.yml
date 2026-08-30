@@ -1,5 +1,41 @@
-# dsh-locale-ru bundle patch: mounts the pack so the client-modules scanner
-# picks up its dsh.client declaration and serves the browser half.
+# dsh-locale-ru bundle patch.
+#
+# 1) Mount the pack so the client-modules scanner picks up its dsh.client
+#    declaration and serves the browser half.
+# 2) Localize the permission preset table. The base bundle's `permission` row
+#    defines the presets WITHOUT display names, so the UI falls back to
+#    title-cased machine ids ("read-only" → "Read Only") which no locale
+#    dictionary can touch. This layer restates the same table with Russian
+#    display names and tooltips; ids, sandbox and approval knobs are unchanged,
+#    so `/permission <id>` and session semantics are untouched.
+#    Non-kebab names pass through the client's displayName() unmodified —
+#    that is the supported localization seam.
+#
+# UPSTREAM SYNC: this restates the presets table from the base bundle
+# (packages/bundle/base/cordis.patch.yml, row id "permission"). If upstream
+# adds or changes a preset, mirror it here — a patch row replaces the whole
+# config, so anything missing here is hidden from users.
+
 - insert:
     - id: locale-ru
       name: dsh-locale-ru
+
+- id: permission
+  name: '@deepseek-ai/dsh-permission-presets'
+  config:
+    presets:
+      read-only:
+        sandbox: read-only
+        approval: ask
+        name: Только чтение
+        description: Агент может читать файлы, но не изменять их; расширение прав требует подтверждения.
+      workspace-write:
+        sandbox: workspace-write
+        approval: ask
+        name: Запись в рабочей папке
+        description: Запись внутри рабочей папки и разрешённых временных папок; более широкие действия требуют подтверждения.
+      danger-full-access:
+        sandbox: danger-full-access
+        approval: never
+        name: Полный доступ
+        description: Полный доступ к файлам без запросов подтверждения.
