@@ -4,12 +4,27 @@
   "description": "Russian language pack for the DeepSeek Harness web UI (community)",
   "type": "module",
   "main": "index.js",
+  "author": "dsh-locale-ru contributors",
+  "license": "MIT",
+  "homepage": "https://github.com/warment/dsh-locale-ru#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/warment/dsh-locale-ru.git"
+  },
+  "bugs": {
+    "url": "https://github.com/warment/dsh-locale-ru/issues"
+  },
   "files": [
     "index.js",
     "lib/client.js",
     "cordis.patch.yml",
     "dict",
-    "README.md"
+    "README.md",
+    "README.en.md",
+    "README.zh.md",
+    "LICENSE",
+    "SAFETY.md",
+    "THIRD_PARTY_NOTICES.md"
   ],
   "exports": {
     ".": "./index.js",
@@ -28,6 +43,5 @@
     "deepseek-harness",
     "russian",
     "localization"
-  ],
-  "license": "MIT"
+  ]
 }

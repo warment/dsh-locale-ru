@@ -1,84 +1,81 @@
 # dsh-locale-ru
 
-[![CI](https://github.com/warment/dsh-locale-ru/actions/workflows/ci.yml/badge.svg)](https://github.com/warment/dsh-locale-ru/actions/workflows/ci.yml)
-<!-- the badge goes live once the repository is published on GitHub -->
+English | [Русский](README.md) | [中文](README.zh.md)
 
-Russian language pack for the DeepSeek Harness web UI. The official UI ships English and Chinese only; this plugin adds «Русский» (Russian) to the built-in language picker. It is packaged as a dsh plugin (bundle) and uses the documented external-plugin locale API — no Harness files are modified.
+`dsh-locale-ru` is a Russian localization of the [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) web UI: the plugin adds «Русский» (Russian) to the **official localization system** — the built-in language picker in the UI settings.
+
+The plugin registers the language and dictionaries through the documented client locale API (`@deepseek-ai/dsh-client-locale`) and restates the permission preset display names through a configuration layer. No Harness files are modified — no fork, no rebuild.
+
+## Developer preview
+
+DeepSeek Harness is in _developer preview_ and iterating rapidly. **THERE WILL BE COMPATIBILITY-BREAKING CHANGES.** This pack tracks that: `node scripts/check.mjs` validates the dictionaries against current upstream strings, and CI runs the check on every push and pull request. Strings missing from the dictionary do not break the UI — they are shown in English (English is the configured fallback).
+
+Review the [safety notice](SAFETY.md) before installing.
 
 ## Install
 
-```bash
-# from the plugin registry
-dsh plugin --profile web add dsh-locale-ru
+### One command
 
-# directly from the GitHub repository
+Copy, paste, restart:
+
+```sh
 dsh plugin --profile web add github:warment/dsh-locale-ru
+```
 
-# from a local checkout
+The command works with any dsh installation — npm (`npx @deepseek-ai/dsh web`) or a source checkout (`pnpm dsh web`) — on macOS, Windows, and Linux. The `web` profile and its layout are created automatically; nothing to configure by hand.
+
+**30-second verification:**
+
+1. Restart `dsh web` (stop and start the process) and open the UI.
+2. Open **Settings → General** and pick **«Русский»** in the **Language** row.
+3. The UI switches to Russian immediately: the sidebar shows «Новая сессия» (New Session) and «Настройки» (Settings). The choice persists across restarts.
+
+If you skip the language pick, the UI stays English — «Русский» remains available in the same settings row.
+
+### From a local checkout
+
+To test without GitHub (e.g. before publishing or with your own edits):
+
+```sh
 dsh plugin --profile web add /path/to/dsh-locale-ru
 ```
 
-The first two options work once the package and repository are published. After installing, restart `dsh web`.
+### Update and uninstall
 
-## Switching the language
+To update to a new version, remove the package and install it again with the same command:
 
-Open **Settings → General** and pick **«Русский»** in the language list — the entry appears there after installing the plugin and restarting `dsh web`.
-
-If a string is not yet in the dictionary, it falls back to English (English is the configured fallback language).
-
-## Update and uninstall
-
-To update, remove the package and install it again:
-
-```bash
+```sh
 dsh plugin --profile web remove dsh-locale-ru
-dsh plugin --profile web add dsh-locale-ru
+dsh plugin --profile web add github:warment/dsh-locale-ru
 ```
 
 Uninstall:
 
-```bash
+```sh
 dsh plugin --profile web remove dsh-locale-ru
 ```
 
 Restart `dsh web` after any plugin change.
 
-## Contributing translations
+## Community and support
 
-Translations live in `dict/ru/<namespace>.json` — one file per namespace; English source strings are in `upstream/corpus.json`. The workflow:
+- Translation bugs, missing strings, and ideas go to this repository's [Issues](https://github.com/warment/dsh-locale-ru/issues).
+- Questions about DeepSeek Harness itself (installation, models, sessions — everything except the translation) belong in the official repository: [GitHub Discussions](https://github.com/deepseek-ai/deepseek-harness/discussions) and the [Discord community](https://discord.gg/Ycq5dCaS4).
 
-1. Edit the relevant file under `dict/ru/`.
-2. Validate the dictionaries:
+## Contributing
 
-   ```bash
-   node scripts/check.mjs
-   ```
+See [CONTRIBUTING.md](CONTRIBUTING.md). The translation workflow in brief:
 
-3. Rebuild the client bundle:
+1. Find the English string in `upstream/corpus.json` — its namespace and key identify the file to edit.
+2. Edit `dict/ru/<namespace>.json`.
+3. Validate the dictionaries: `node scripts/check.mjs`.
+4. Rebuild the client bundle: `node scripts/build.mjs`.
+5. Commit both changes: the dictionary file and the updated `lib/client.js`.
 
-   ```bash
-   node scripts/build.mjs
-   ```
-
-4. Commit both changes: the dictionary file and the updated `lib/client.js`.
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the detailed rules. Maintainers: see [docs/upstream-sync.md](docs/upstream-sync.md) for refreshing the dictionary after upstream releases.
-
-## Compatibility
-
-The pack targets current releases of [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness). When upstream adds new UI strings, dictionary completeness is tracked by `node scripts/check.mjs`, which prints a per-namespace coverage table. An incomplete translation does not break the UI: missing strings are shown in English.
-
-## Repository layout
-
-- `dict/ru/*.json` — translation sources, one file per namespace;
-- `upstream/corpus.json` — English strings extracted from upstream;
-- `lib/client.js` — built browser bundle (generated by `node scripts/build.mjs` and committed, so users do not need a build step);
-- `scripts/` — validation (`check.mjs`), build (`build.mjs`), upstream string extraction (`extract.mjs`), live boot verification (`verify-boot.mjs`).
+Repository layout: `dict/ru/*.json` — translation sources; `upstream/corpus.json` — English strings extracted from upstream (`node scripts/extract.mjs`, see [docs/upstream-sync.md](docs/upstream-sync.md)); `lib/client.js` — built browser bundle (committed, so users never need a build step); `scripts/` — validation, build, extraction, live boot verification.
 
 ## License
 
-[MIT](LICENSE).
+[MIT](LICENSE)
 
-## Disclaimer
-
-This is an independent community project. It is not an official DeepSeek product and is not affiliated with DeepSeek in any way.
+DeepSeek Harness is a project by [DeepSeek AI](https://deepseek.com), licensed MIT; attribution and borrowings are described in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
